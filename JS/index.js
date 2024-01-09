@@ -1,9 +1,9 @@
-// * readFileSync 제출용
-//! 0
-//! /dev/stdin
+// readFileSync 제출용
+//* 0
+//* /dev/stdin
 
-// * readFileSync 풀이용
-//! example.txt
+//readFileSync 풀이용
+//* example.txt
 
 //* 여러줄 일때
 //! .split("\n").map((line) => line.split(" "));
