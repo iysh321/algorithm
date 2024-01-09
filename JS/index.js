@@ -1,7 +1,5 @@
-// /dev/stdin
-// example.txt
+// * readFileSync 제출용
+//! /dev/stdin
 
-let input = require("fs").readFileSync("/dev/stdin").toString().split(" ");
-var a = parseInt(input[0]);
-var b = parseInt(input[1]);
-console.log(a - b);
+// * readFileSync 풀이용
+//! example.txt
