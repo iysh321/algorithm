@@ -13,12 +13,13 @@ console.log("----------------------------------------------------------------");
 
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./example.txt";
 
-const input = Number(require("fs").readFileSync(filePath).toString());
+const input = require("fs").readFileSync(filePath).toString().trim().split("\n")
 
-for (let i = 1; i <= input; i++) {
-  let pattern = " ".repeat(input - i) + "*".repeat(i);
-  console.log(pattern);
+for(let i = 0; i < input.length; i++){
+	let data = input[i].split(' ').map(Number);
+  	console.log(data[0] + data[1]);
 }
+
 
 console.log("input-----------------------------------------------------------");
 console.log(input);
