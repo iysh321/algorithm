@@ -17,17 +17,23 @@ const input = require("fs")
   .readFileSync(filePath)
   .toString()
   .trim()
-  .split("\n")
-  .map((line) => line.split(" ").map(Number));
+  .split("\n");
 
-const max = Math.max(...input[1]);
-let sum = 0;
+const N = Number(input[0]);
+let count = N;
+let word;
 
-for (let i = 0; i < input[0]; i++) {
-  sum += (input[1][i] / max) * 100;
+for (let i = 1; i <= N; i++) {
+  word = input[i];
+  for (let j = 0; j < word.length - 1; j++) {
+    if (word[j] != word[j + 1] && !!word.slice(j + 1).includes(word[j])) {
+      count--;
+      break;
+    }
+  }
 }
 
-console.log(sum / input[0]);
+console.log(count);
 
 console.log("input-----------------------------------------------------------");
 console.log(input);
