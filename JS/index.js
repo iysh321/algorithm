@@ -13,27 +13,30 @@
 console.log("----------------------------------------------------------------");
 
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./example.txt";
-const input = require("fs")
-  .readFileSync(filePath)
-  .toString()
-  .trim()
-  .split("\n");
+const input = require("fs").readFileSync(filePath).toString().trim().split("");
 
-const N = Number(input[0]);
-let count = N;
-let word;
+let phone = {
+  2: "ABC",
+  3: "DEF",
+  4: "GHI",
+  5: "JKL",
+  6: "MNO",
+  7: "PQRS",
+  8: "TUV",
+  9: "WXYZ",
+};
+let result = 0;
 
-for (let i = 1; i <= N; i++) {
-  word = input[i];
-  for (let j = 0; j < word.length - 1; j++) {
-    if (word[j] != word[j + 1] && !!word.slice(j + 1).includes(word[j])) {
-      count--;
+for (let i = 0; i < input.length; i++) {
+  for (let j = 2; j <= 9; j++) {
+    if (phone[j].includes(input[i])) {
+      result += j + 1;
       break;
     }
   }
 }
 
-console.log(count);
+console.log(result);
 
 console.log("input-----------------------------------------------------------");
 console.log(input);
