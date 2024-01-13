@@ -8,7 +8,9 @@ Math.max(a) - a값들 중 최대 a => ...Array / a,b,c
 "a".repeat(i) - i 만큼 a 를 반복
 str.indexOf("abc") - 찾고자 하는 index의 시작
 str.lastIndexOf() - 역순으로 탐색
-str.charCodeAt(index) - str의 아스키코드 (index 생략가능)
+str.toLowerCase() - 소문자
+str.charCodeAt(index) - str의 문자열 -> 아스키코드 (index 생략가능)
+str.fromCharCode() - str의 아스키코드 -> 문자열로
 String.fromCharCode(97, 98) - 아스키코드(97, 98)를 문자열로
 
 str.split("").reverse().join("") - 문자열을 뒤집는 방법 (문자열 -> 배열(뒤집고) -> 문자열)
