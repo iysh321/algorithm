@@ -13,31 +13,26 @@
 console.log("----------------------------------------------------------------");
 
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./example.txt";
-const input = require("fs").readFileSync(filePath).toString().trim().toLowerCase();
+const input = require("fs")
+  .readFileSync(filePath)
+  .toString()
+  .trim()
+  .split("\n")
+  .map((line) => line.split(" ").map(Number));
 
-const result = new Array(26).fill(0);
+let max = 0;
+let idx = [];
 
-for (let i = 0; i < input.length; i++) {
-  result[input.charCodeAt(i) - 97] ++;
-}
-
-const max = Math.max(...result);
-const index = result.indexOf(max);
-
-let isSame = false;
-
-for (let j = 0; j < 26; j++) {
-  if (result[j] === max && index != j) {
-    isSame = true;
-    break;
+for (let i = 0; i < 9; i++) {
+  for (let j = 0; j < 9; j++) {
+    if (input[i][j] >= max) {
+      max = input[i][j];
+      idx = [i + 1, j + 1];
+    }
   }
 }
-
-console.log(isSame ? "?" : String.fromCharCode(index + 65));
-
-
-
-
+console.log(max);
+console.log(idx.join(" "));
 
 console.log("input-----------------------------------------------------------");
 console.log(input);
