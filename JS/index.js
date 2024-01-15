@@ -21,21 +21,17 @@ const input = require("fs")
   .split("\n")
   .map(Number);
 
-const coins = [25, 10, 5, 1];
-let result = [];
 
-for (let i = 1; i <= input[0]; i++) {
-  let rest = input[i];
+let range = 1, block = 1;
 
-  for (let j = 0; j < coins.length; j++) {
-    result.push(Math.floor(rest / coins[j]));
-    rest = rest % coins[j];
-  }
+while (block < input[0]) {    
+  block += 6 * range;
 
-  console.log(result.join(" "));
-  rest = 0;
-  result = [];
+  range++;
 }
+
+console.log(range);
+
 
 console.log("input-----------------------------------------------------------");
 console.log(input);
