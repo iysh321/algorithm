@@ -1,7 +1,17 @@
+# 내장함수
+
+parseInt(ZZZZZ, 36) - 문자열 "ZZZZZ"를 36진수로 해석하여 해당하는 10진수로 변환
+60466175.toString(36) - 숫자 60466175를 36진수로 변환하여 zzzzz로 리턴
+
 # math
 
-Math.min(a) - a값들 중 최소 a => ...Array / a,b,c
-Math.max(a) - a값들 중 최대 a => ...Array / a,b,c
+Math.min(a) - a값들 중 최소 // a의 값은 => ...Array 또는 a,b,c
+Math.max(a) - a값들 중 최대 // a의 값은 => ...Array 또는 a,b,c
+Math.sqrt(a) - a의 제곱근
+Math.pow(a, b) - 거듭제곱 // a=2 b=3 -> 2^3 = 8
+Math.floor(3.8) - 소수 내림 // 3
+Math.ceil(3.2); - 소수 올림 // 4
+Math.round(3.5) - 소수 반올림 // 4
 
 # 문자열
 
@@ -9,6 +19,7 @@ Math.max(a) - a값들 중 최대 a => ...Array / a,b,c
 str.indexOf("abc") - 찾고자 하는 index의 시작
 str.lastIndexOf() - 역순으로 탐색
 str.toLowerCase() - 소문자
+str.toUpperCase() - 대문자
 str.charCodeAt(index) - str의 문자열 -> 아스키코드 (index 생략가능)
 str.fromCharCode() - str의 아스키코드 -> 문자열로
 String.fromCharCode(97, 98) - 아스키코드(97, 98)를 문자열로

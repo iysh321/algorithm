@@ -13,22 +13,29 @@
 console.log("----------------------------------------------------------------");
 
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./example.txt";
-const input = require("fs").readFileSync(filePath).toString().trim().split("\n").map((line) => line.split(""));
 
-let result = ""
+const input = require("fs")
+  .readFileSync(filePath)
+  .toString()
+  .trim()
+  .split("\n")
+  .map(Number);
 
-const MaxArray = Math.max(...input.map((value) => value.length))
+const coins = [25, 10, 5, 1];
+let result = [];
 
-for (let i = 0; i < MaxArray; i++) {
-  for (let j = 0; j < 5; j++) {
-    if (input[j][i] === undefined) { continue }
-    result += input[j][i] 
-   }
+for (let i = 1; i <= input[0]; i++) {
+  let rest = input[i];
+
+  for (let j = 0; j < coins.length; j++) {
+    result.push(Math.floor(rest / coins[j]));
+    rest = rest % coins[j];
+  }
+
+  console.log(result.join(" "));
+  rest = 0;
+  result = [];
 }
-
-
-console.log(result)
-
 
 console.log("input-----------------------------------------------------------");
 console.log(input);
