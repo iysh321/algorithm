@@ -14,21 +14,22 @@ console.log("----------------------------------------------------------------");
 
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./example.txt";
 
-const input = require("fs").readFileSync(filePath).toString().trim();
+const input = require("fs")
+  .readFileSync(filePath)
+  .toString()
+  .trim()
+  .split(" ")
+  .map(Number);
 
-let x = Number(input);
-let row = 1;
+let number = [];
 
-while (x > row) {
-  x -= row++;
+for (let i = 1; i <= input[0]; i++) {
+  if (input[0] % i === 0) {
+    number.push(i);
+  }
 }
-let num = row - x + 1;
 
-if (row % 2 === 0) {
-  console.log(`${x}/${num}`);
-} else {
-  console.log(`${num}/${x}`);
-}
+console.log(number[input[1] - 1] ? number[input[1] - 1] : 0);
 
 console.log("input-----------------------------------------------------------");
 console.log(input);
