@@ -18,18 +18,24 @@ const input = require("fs")
   .readFileSync(filePath)
   .toString()
   .trim()
-  .split(" ")
-  .map(Number);
+  .split('\n').map(Number);
+input.pop(); 
 
-let number = [];
+const result = input.map(function solution(num) {
+  const result = []; 
 
-for (let i = 1; i <= input[0]; i++) {
-  if (input[0] % i === 0) {
-    number.push(i);
+  for (let i=1; i < num; i++) {  
+    if (num % i === 0) {
+      result.push(i);       
+    }
   }
-}
-
-console.log(number[input[1] - 1] ? number[input[1] - 1] : 0);
+  if (result.reduce((acc, cur) => acc + cur, 0) === num) {
+    return `${num} = ` + result.join(' + ');
+  } else {
+    return `${num} is NOT perfect.`;
+  }
+}).join('\n')
+console.log(result)
 
 console.log("input-----------------------------------------------------------");
 console.log(input);
