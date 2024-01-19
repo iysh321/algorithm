@@ -1,17 +1,4 @@
-//* readFileSync 제출용
-// 0
-// /dev/stdin
-
-//* readFileSync 풀이용
-// example.txt
-
-//* 여러줄 일때
-//! 아래 두줄 코드는 시간이 오래걸림 (반복문 여러번 사용)
-// .split("\n").map((line) => line.split(" "));
-// .split("\n").map((line) => line.split(" ").map(Number));
-
-console.log("----------------------------------------------------------------");
-
+//https://www.acmicpc.net/problem/1978
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./example.txt";
 
 const input = require("fs")
@@ -49,5 +36,3 @@ for (let i = 0; i < N; i++) {
 }
 
 console.log(count);
-console.log("input-----------------------------------------------------------");
-console.log(input);
