@@ -17,18 +17,9 @@ const input = require("fs")
   .readFileSync(filePath)
   .toString()
   .trim()
-  
-let N = Number(input)
-  const answer = [];
+  .split("\n").map((line) => line.split(" ").map(Number));
 
-for (let i = 2; i <= N; i++) {
-  while (N % i === 0) {
-    N /= i;
-    console.log(i)
-  }
-  if (N === 1) break;
-}
-
+console.log(input[0][0] ^ input[1][0] ^ input[2][0], input[0][1] ^ input[1][1] ^ input[2][1])
 
 console.log("input-----------------------------------------------------------");
 console.log(input);
