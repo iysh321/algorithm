@@ -1,4 +1,5 @@
 # algorithm repository
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=i_y)](https://solved.ac/i_y/)
 
 ## JAVA
 IntelliJ를 사용
