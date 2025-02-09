@@ -8,7 +8,7 @@ int N = Integer.parseInt(input);
 - 한 줄 입력받은 값 공백 기준으로 배열 담기
 String[] line = br.readLine().split(" ");
 
-- 출력
+- 출력 (String만 출력 가능)
 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 bw.write()
 bw.newLine(); // 줄바꿈
@@ -27,6 +27,17 @@ public class Main {
 
         int N = Integer.parseInt(br.readLine());
         String[] line = br.readLine().split(" ");
+
+        int max = Integer.parseInt(line[0]);
+        int min = Integer.parseInt(line[0]);
+
+        for (int i = 1; i < N; i++) {
+            max = Math.max(max, Integer.parseInt(line[i]));
+            min = Math.min(min, Integer.parseInt(line[i]));
+        }
+
+
+        bw.write(String.valueOf(max * min));
 
         bw.flush();
         bw.close();
