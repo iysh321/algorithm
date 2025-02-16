@@ -7,36 +7,29 @@ public class BOJ_2576_B3 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int N = Integer.parseInt(br.readLine());
-
         int sum = 0;
-        int[] odd = new int[N];
+        int oddMin = Integer.MAX_VALUE;
+        boolean odd = false;
 
-        for (int i = 0; i < N; i++) {
-            String input = br.readLine();
-            int num = Integer.parseInt(input);
+        for (int i = 0; i < 7; i++) {
+            int num = Integer.parseInt(br.readLine());
 
             if (num % 2 != 0) {
-                odd[i] = num;
+                sum += num;
+                oddMin = Math.min(oddMin, num);
+                odd = true;
             }
         }
 
-        int oddMin = Integer.MAX_VALUE;
-
-        for (int num : odd) {
-            oddMin = Math.min(oddMin, num);
-            sum += num;
+        if (odd) {
+            bw.write(sum + "\n");
+            bw.write(oddMin + "\n");
+        } else {
+            bw.write("-1\n");
         }
-
-        bw.write(sum);
-        bw.write(oddMin);
-
-
-        bw.write(String.valueOf(N));
 
         bw.flush();
         bw.close();
         br.close();
     }
-
 }
