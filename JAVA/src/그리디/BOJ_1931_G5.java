@@ -3,6 +3,8 @@ package 그리디;
 import java.io.*;
 import java.util.*;
 
+// 정렬을 회의시간 빠른순 1순위 회의 종료시간, 2순위 회의 시작시간으로 정렬 후 순회하여 찾는다.
+
 public class BOJ_1931_G5 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
